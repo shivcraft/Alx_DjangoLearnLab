@@ -1,12 +1,9 @@
-# Update
+# Update Operation
 
-Command (in Django shell):
 ```python
-book = Book.objects.get(id=1)   # or use the book variable if still in memory
+from bookshelf.models import Book
+book = Book.objects.get(id=1)
 book.title = "Nineteen Eighty-Four"
 book.save()
-book
-```
-
-# Expected output:
-# <Book: Nineteen Eighty-Four by George Orwell (1949)>
+print(book)
+# Expected output: Nineteen Eighty-Four by George Orwell (1949)

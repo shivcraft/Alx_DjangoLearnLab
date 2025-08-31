@@ -1,12 +1,8 @@
-# Delete
+# Delete Operation
 
-Command (in Django shell):
 ```python
+from bookshelf.models import Book
 book = Book.objects.get(id=1)
 book.delete()
-Book.objects.all()
-```
-
-# Expected output:
-# (1, {'bookshelf.Book': 1})   # deletion return
-# <QuerySet []>               # no books remain
+print(Book.objects.all())
+# Expected output: <QuerySet []>

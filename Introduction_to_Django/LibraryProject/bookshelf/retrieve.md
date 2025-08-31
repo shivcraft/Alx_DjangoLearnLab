@@ -1,9 +1,7 @@
-# Retrieve
+# Retrieve Operation
 
-Command (in Django shell):
 ```python
-Book.objects.all()
-```
-
-# Expected output:
-# <QuerySet [<Book: 1984 by George Orwell (1949)>]>
+from bookshelf.models import Book
+book = Book.objects.get(id=1)   # or use the id you saw in shell
+print(book.title, book.author, book.publication_year)
+# Expected output: 1984 George Orwell 1949
