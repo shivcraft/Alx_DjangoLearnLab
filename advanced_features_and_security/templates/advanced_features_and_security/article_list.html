@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head><title>Articles</title></head>
+<body>
+  <h1>Articles</h1>
+
+  {% if perms.advanced_features_and_security.can_create %}
+    <a href="{% url 'afs:article_create' %}">Create new article</a>
+  {% endif %}
+
+  <ul>
+    {% for article in articles %}
+      <li>
+        <strong>{{ article.title }}</strong> — {{ article.author }} 
+        {% if perms.advanced_features_and_security.can_edit %}
+          <a href="{% url 'afs:article_edit' article.pk %}">Edit</a>
+        {% endif %}
+        {% if perms.advanced_features_and_security.can_delete %}
+          <form action="{% url 'afs:article_delete' article.pk %}" method="post" style="display:inline">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+          </form>
+        {% endif %}
+      </li>
+    {% empty %}
+      <li>No articles yet.</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
