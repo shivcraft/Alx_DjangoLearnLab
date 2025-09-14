@@ -30,18 +30,15 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'bookshelf',
-
-    # our new app
-    'advanced_features_and_security.apps.AdvancedFeaturesAndSecurityConfig',
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "bookshelf",
+    "advanced_features_and_security",  
 ]
-
 
 
 MIDDLEWARE = [
@@ -126,5 +123,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-AUTH_USER_MODEL = 'advanced_features_and_security.CustomUser'
+
+AUTH_USER_MODEL = "advanced_features_and_security.CustomUser"
+
 
